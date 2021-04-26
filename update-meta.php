@@ -50,7 +50,7 @@
             <form action="sys_update.php">
               <div class="form-group">
                 <label for="fname">File name:</label>
-                <input type="text" class="form-control" id="fname" placeholder="Enter file name" name="fname">
+                <input type="text" class="form-control" id="fname" placeholder="Enter file name" name="fname" required>
                 <input type="text" class="form-control" id="currentfname" name="currentfname">
               </div>
               <div class="form-group">
@@ -111,6 +111,20 @@
     $("#keywords").val(keywords);	
   }
   readPdfMetadata();
+  $("#fname").on("change", function(){
+    if(!$("#fname").val().endsWith(".pdf")){
+      $("button").attr("disabled", true);
+      alert("File needs to end with .pdf extension.")  
+    }else{
+      $("button").attr("disabled", false);
+    }
+    if($("#fname").val().indexOf("/") > -1 || $("#fname").val().indexOf("\\") > -1 ){
+      $("button").attr("disabled", true);
+      alert(" Characters '\\' and '/' are not allowed in the file name.")
+    }else{
+      $("button").attr("disabled", false);
+    }
+  });
   
 </script>
 </html>

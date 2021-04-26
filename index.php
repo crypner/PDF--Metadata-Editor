@@ -52,7 +52,7 @@
                   }else{
                     $filecount = $filecount +1;
                     // Create file element
-                    echo '<div class="col-2 file_el"><a href="'.$filename.'" target="_blank"><div class="file_object" title="Download"> <img src="Assets/pdficon.png" width="50px"><br>'. $tempfilename. '</div></a></div>'; 
+                    echo '<div class="col-sm-6 col-md-2 file_el"><a href="'.$filename.'" target="_blank"><div class="file_object" title="Download"> <img src="Assets/pdficon.png" width="50px"><br>'. $tempfilename. '</div></a></div>'; 
                   }                    
                 }   
               }
